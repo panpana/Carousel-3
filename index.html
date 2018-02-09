@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>轮播图</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.wrap{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+.wrap .container{
+    display: flex;
+    position: absolute;
+}
+.container>li{
+    list-style: none;
+}
+.container>li>a>img{
+    width: 300px;
+    height: 200px;
+}
+.wrap .btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    background: #4f443C;
+    opacity: 0.7;
+    text-decoration: none;
+    cursor: pointer;
+}
+.wrap .btn:hover{
+    opacity: 1;
+}
+.wrap .pre{
+    left: 5px;
+}
+.wrap .next{
+    right: 5px;
+}
+.wrap .page-btn{
+    display: flex;
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.wrap>.page-btn>li{
+    margin: 0 10px;
+    width: 30px;
+    height: 8px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    opacity: 0.7;
+    list-style: none;
+    cursor: pointer;
+}
+.wrap>.page-btn>li.active{
+    background-color: #ccc;
+}
+.wrap>.page-btn>li:hover{
+    opacity: 1;
+}
+    </style>
+</head>
+
+<body>
+
+        <div class="wrap">
+        <ul class="container">
+            <li><a href="#"><img src="images/1.jpg" width=300 alt="图片1" height=200></a></li>
+            <li><a href="#"><img src="images/2.jpg" width=300 alt="图片2" height=200></a></li>
+            <li><a href="#"><img src="images/3.jpg" width=300 alt="图片3" height=200></a></li>
+            <li><a href="#"><img src="images/4.jpg" width=300 alt="图片4" height=200></a></li>
+        </ul>
+        <a class="btn pre"><</a>
+        <a class="btn next">></a>
+        <ul class="page-btn">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
